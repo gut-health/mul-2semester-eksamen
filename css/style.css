@@ -1,0 +1,172 @@
+/* Fjerner standard margin og padding fra browseren */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling af hele siden */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+/* Navigation bar */
+.navbar {
+  /* Gør navbaren lige så bred som siden */
+  width: 100%;
+  /* Højden på navigationen */
+  height: 100px;
+  /* Baggrundsfarve */
+  background-color: #e3c5c5;
+  /* Flexbox gør det nemt at placere elementer */
+  display: flex;
+  /* Centrerer elementerne lodret */
+  align-items: center;
+  /* Fordeler plads mellem logo, links og knap */
+  justify-content: space-between;
+  /* Luft i siderne */
+  padding: 0 48px;
+}
+
+/* Logo styling */
+.logo {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1b0508;
+}
+
+/* Container til navigation links */
+.nav-links {
+  /* Lægger links ved siden af hinanden */
+  display: flex;
+  /* Afstand mellem links */
+  gap: 42px;
+  /* Centrerer links lodret */
+  align-items: center;
+}
+
+/* Styling af links */
+.nav-links a {
+  /* Fjerner underline */
+  text-decoration: none;
+  /* Tekstfarve */
+  color: #1b0508;
+  /* Tekst størrelse */
+  font-size: 18px;
+  /* Font tykkelse */
+  font-weight: 400;
+}
+
+/* Styling af quiz knappen */
+.quiz-btn {
+  background-color: #c79292;
+  color: #1b0508;
+  text-decoration: none;
+  /* Luft inde i knappen */
+  padding: 14px 38px;
+  /* Gør knappen rund */
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Hover effekt når man holder musen over */
+.quiz-btn:hover,
+.nav-links a:hover {
+  /* Gør elementet lidt gennemsigtigt */
+  opacity: 0.5;
+}
+
+/* Footer container */
+.footer {
+  /* Gør footeren lige så bred som siden */
+  width: 100%;
+
+  /* Højden på footeren */
+  height: 180px;
+
+  /* Baggrundsfarve */
+  background-color: #e3c5c5;
+
+  /* Flexbox bruges til layout */
+  display: flex;
+
+  /* Centrerer indhold lodret */
+  align-items: center;
+
+  /* Fordeler plads mellem elementerne */
+  justify-content: space-between;
+
+  /* Luft i siderne */
+  padding: 0 64px;
+
+  /* Gør det muligt at placere copyright absolut */
+  position: relative;
+}
+
+/* Logo styling */
+.footer-logo {
+  /* Tekst størrelse */
+  font-size: 34px;
+
+  /* Gør teksten bold */
+  font-weight: 800;
+
+  /* Tekstfarve */
+  color: #1b0508;
+}
+
+/* Email styling */
+.footer-email {
+  /* Tekst størrelse */
+  font-size: 24px;
+
+  /* Normal font tykkelse */
+  font-weight: 400;
+
+  /* Tekstfarve */
+  color: #1b0508;
+}
+
+/* Container til sociale medier */
+.footer-socials {
+  /* Lægger cirklerne ved siden af hinanden */
+  display: flex;
+
+  /* Afstand mellem cirklerne */
+  gap: 20px;
+}
+
+/* Sociale medier cirkler */
+.social-circle {
+  /* Bredde */
+  width: 56px;
+
+  /* Højde */
+  height: 56px;
+
+  /* Baggrundsfarve */
+  background-color: #bf9a9a;
+
+  /* Gør dem helt runde */
+  border-radius: 50%;
+
+  /* Gør links til blokke */
+  display: block;
+}
+
+/* Copyright tekst */
+.footer-copy {
+  /* Placeres nederst til højre */
+  position: absolute;
+
+  right: 24px;
+  bottom: 14px;
+
+  /* Lille tekst */
+  font-size: 13px;
+
+  /* Tekstfarve */
+  color: #1b0508;
+}
