@@ -5,10 +5,23 @@
   padding: 0;
 }
 
+/* Gør hele siden lige så høj som skærmen */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
 /* Styling af hele siden */
 body {
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
+  display: flex;
+
+  /* Elementer ligger oven på hinanden */
+  flex-direction: column;
+
+  /* Minimum højde = hele browser-vinduet */
+  min-height: 100vh;
 }
 
 /* Navigation bar */
@@ -84,7 +97,7 @@ body {
   width: 100%;
 
   /* Højden på footeren */
-  height: 180px;
+  height: 150px;
 
   /* Baggrundsfarve */
   background-color: #e3c5c5;
@@ -103,6 +116,9 @@ body {
 
   /* Gør det muligt at placere copyright absolut */
   position: relative;
+
+  /* Skubber footeren helt ned */
+  margin-top: auto;
 }
 
 /* Logo styling */
