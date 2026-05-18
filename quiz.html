@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Switzer til brødtekst -->
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Playfair Display til overskrifter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>GutGuide</title>
+  </head>
+
+  <body>
+    <!-- Header / navigation -->
+    <header class="site-header">
+      <a href="index.html" class="logo">GutGuide</a>
+
+      <!-- Burgerknap til mobil -->
+      <button class="burger" id="burger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="hvad-er.html">Hvad er gut health?</a>
+        <a href="blog.html">Blog</a>
+        <a href="opskrifter.html">Opskrifter</a>
+        <a href="quiz.html" class="active">Quiz</a>
+        <a href="om-os.html">Om os</a>
+      </nav>
+
+      <a href="quiz.html" class="header-btn">Tag quizzen</a>
+    </header>
+
+    <main>
+      <!-- Hele quizzen ligger i denne sektion -->
+      <section class="quiz-section">
+        <h1>Quiz om Gut Health</h1>
+
+        <!-- Startside -->
+        <div class="quiz-card" id="start-screen">
+          <h2>Myte eller fakta</h2>
+
+          <p>
+            Test din viden om gut health. Du får 6 spørgsmål, hvor du skal
+            vælge, om udsagnet er en myte eller fakta.
+          </p>
+
+          <button class="quiz-btn-main" onclick="startQuiz()">
+            Start quizzen
+          </button>
+        </div>
+
+        <!-- Spørgsmålsside -->
+        <div class="quiz-card hidden" id="question-screen">
+          <p class="quiz-progress" id="quiz-progress">Spørgsmål 1/6</p>
+
+          <h2 id="question-text">Spørgsmålet kommer her</h2>
+
+          <div class="quiz-answer-buttons">
+            <button onclick="chooseAnswer('myte')">Myte</button>
+            <button onclick="chooseAnswer('fakta')">Fakta</button>
+          </div>
+
+          <p class="quiz-feedback" id="quiz-feedback"></p>
+        </div>
+
+        <!-- Slutside -->
+        <div class="quiz-card hidden" id="result-screen">
+          <h2>Tak for at deltage</h2>
+
+          <p id="result-text">Her kommer dit resultat.</p>
+
+          <button class="quiz-btn-main" onclick="restartQuiz()">
+            Prøv igen
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <h2>GutGuide</h2>
+      <p>kontakt.guthealth@gmail.com</p>
+
+      <div class="footer-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </footer>
+
+    <!-- JavaScript til quizzen -->
+    <script>
+      // Spørgsmålene i quizzen
+      const questions = [
+        {
+          text: "Gut health handler kun om fordøjelse.",
+          answer: "myte",
+        },
+        {
+          text: "Tarmen kan have betydning for dit immunforsvar.",
+          answer: "fakta",
+        },
+        {
+          text: "Alle bakterier i tarmen er dårlige.",
+          answer: "myte",
+        },
+        {
+          text: "Stress kan påvirke din mave og fordøjelse.",
+          answer: "fakta",
+        },
+        {
+          text: "Fibre kan være gode for fordøjelsen.",
+          answer: "fakta",
+        },
+        {
+          text: "En sund tarm kan påvirke både energi og velvære.",
+          answer: "fakta",
+        },
+      ];
+
+      let currentQuestion = 0;
+      let score = 0;
+
+      function startQuiz() {
+        document.getElementById("start-screen").classList.add("hidden");
+        document.getElementById("question-screen").classList.remove("hidden");
+
+        currentQuestion = 0;
+        score = 0;
+
+        showQuestion();
+      }
+
+      function showQuestion() {
+        const question = questions[currentQuestion];
+
+        document.getElementById("quiz-progress").textContent =
+          "Spørgsmål " + (currentQuestion + 1) + "/6";
+
+        document.getElementById("question-text").textContent = question.text;
+        document.getElementById("quiz-feedback").textContent = "";
+      }
+
+      function chooseAnswer(choice) {
+        const correctAnswer = questions[currentQuestion].answer;
+
+        if (choice === correctAnswer) {
+          score++;
+          document.getElementById("quiz-feedback").textContent = "Rigtigt!";
+        } else {
+          document.getElementById("quiz-feedback").textContent = "Ikke helt.";
+        }
+
+        setTimeout(() => {
+          currentQuestion++;
+
+          if (currentQuestion < questions.length) {
+            showQuestion();
+          } else {
+            showResult();
+          }
+        }, 800);
+      }
+
+      function showResult() {
+        document.getElementById("question-screen").classList.add("hidden");
+        document.getElementById("result-screen").classList.remove("hidden");
+
+        document.getElementById("result-text").textContent =
+          "Du fik " +
+          score +
+          " ud af " +
+          questions.length +
+          " rigtige. Tak fordi du testede din viden om gut health!";
+      }
+
+      function restartQuiz() {
+        document.getElementById("result-screen").classList.add("hidden");
+        document.getElementById("start-screen").classList.remove("hidden");
+      }
+    </script>
+    <script>
+      const burgerBtn = document.getElementById("burger-btn");
+      const navMenu = document.getElementById("nav-menu");
+
+      burgerBtn.addEventListener("click", function () {
+        navMenu.classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>

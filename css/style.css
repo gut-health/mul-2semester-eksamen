@@ -1,192 +1,1653 @@
-/* Fjerner standard margin og padding fra browseren */
+/* ---------- RESET ---------- */
+/* Fjerner browserens standard margin og padding */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/*google font*/
-body {
-  font-family: "Work Sans", sans-serif;
-}
+/* ---------- GENEREL STYLING ---------- */
 
-/* Gør hele siden lige så høj som skærmen */
 html,
 body {
-  height: 100%;
-  margin: 0;
+  min-height: 100%;
 }
-/* Styling af hele siden */
+
 body {
-  background-color: #f2f2f2;
-  display: flex;
-
-  /* Elementer ligger oven på hinanden */
-  flex-direction: column;
-
-  /* Minimum højde = hele browser-vinduet */
-  min-height: 100vh;
+  font-family: "Switzer", sans-serif;
+  background-color: #ffffff;
+  color: #3a2e2a;
+  line-height: 1.6;
 }
 
-/* Navigation bar */
-.navbar {
-  /* Gør navbaren lige så bred som siden */
+main {
+  width: 86%;
+  margin: 0 auto;
+}
+
+/* ---------- HEADER / NAVIGATION ---------- */
+
+.site-header {
   width: 100%;
-  /* Højden på navigationen */
-  height: 100px;
-  /* Baggrundsfarve */
-  background-color: #e3c5c5;
-  /* Flexbox gør det nemt at placere elementer */
+  height: 90px;
+  background-color: #ffffff;
+
   display: flex;
-  /* Centrerer elementerne lodret */
   align-items: center;
-  /* Fordeler plads mellem logo, links og knap */
   justify-content: space-between;
-  /* Luft i siderne */
-  padding: 0 48px;
+
+  padding: 0 8%;
 }
 
-/* Logo styling */
 .logo {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 800;
-  color: #1b0508;
+  color: #3a2e2a;
+  text-decoration: none;
 }
 
-/* Container til navigation links */
-.nav-links {
-  /* Lægger links ved siden af hinanden */
+.nav-menu {
   display: flex;
-  /* Afstand mellem links */
-  gap: 42px;
-  /* Centrerer links lodret */
   align-items: center;
+  gap: 32px;
 }
 
-/* Styling af links */
-.nav-links a {
-  /* Fjerner underline */
+.nav-menu a {
   text-decoration: none;
-  /* Tekstfarve */
-  color: #1b0508;
-  /* Tekst størrelse */
-  font-size: 18px;
-  /* Font tykkelse */
-  font-weight: 400;
+  color: #3a2e2a;
+  font-size: 15px;
+  font-weight: 500;
 }
 
-/* Styling af quiz knappen */
-.quiz-btn {
-  background-color: #c79292;
-  color: #1b0508;
+.nav-menu a:hover {
+  opacity: 0.6;
+}
+
+.header-btn {
+  background-color: #1f3d2b;
+  color: #ffffff;
   text-decoration: none;
-  /* Luft inde i knappen */
-  padding: 14px 38px;
-  /* Gør knappen rund */
+
+  padding: 12px 24px;
   border-radius: 999px;
-  font-size: 18px;
+
+  font-size: 14px;
   font-weight: 700;
 }
 
-/* Hover effekt når man holder musen over */
-.quiz-btn:hover,
-.nav-links a:hover {
-  /* Gør elementet lidt gennemsigtigt */
-  opacity: 0.5;
+.header-btn:hover {
+  opacity: 0.8;
 }
 
-/* Footer container */
-.footer {
-  /* Gør footeren lige så bred som siden */
-  width: 100%;
+/* ================================================== */
+/* ---------- FORSIDE / INDEX.HTML ---------- */
+/* ================================================== */
 
-  /* Højden på footeren */
-  height: 150px;
+/* Hero/første store område på forsiden */
+.home-hero {
+  position: relative;
+  min-height: 430px;
+  border-radius: 24px;
+  margin-top: 30px;
+  padding: 60px;
 
-  /* Baggrundsfarve */
-  background-color: #e3c5c5;
-
-  /* Flexbox bruges til layout */
   display: flex;
-
-  /* Centrerer indhold lodret */
   align-items: center;
 
-  /* Fordeler plads mellem elementerne */
-  justify-content: space-between;
+  background:
+    linear-gradient(rgba(31, 61, 43, 0.72), rgba(31, 61, 43, 0.72)),
+    linear-gradient(135deg, #86b578, #3a2e2a);
 
-  /* Luft i siderne */
-  padding: 0 64px;
-
-  /* Gør det muligt at placere copyright absolut */
-  position: relative;
-
-  /* Skubber footeren helt ned */
-  margin-top: auto;
+  overflow: hidden;
 }
 
-/* Logo styling */
-.footer-logo {
-  /* Tekst størrelse */
-  font-size: 34px;
-
-  /* Gør teksten bold */
-  font-weight: 800;
-
-  /* Tekstfarve */
-  color: #1b0508;
+.home-hero-content {
+  max-width: 560px;
+  color: #ffffff;
+  z-index: 2;
 }
 
-/* Email styling */
-.footer-email {
-  /* Tekst størrelse */
-  font-size: 24px;
+.hero-label {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
 
-  /* Normal font tykkelse */
-  font-weight: 400;
+  padding: 8px 14px;
+  border-radius: 8px;
 
-  /* Tekstfarve */
-  color: #1b0508;
+  font-size: 13px;
+  font-weight: 700;
+
+  margin-bottom: 20px;
 }
 
-/* Container til sociale medier */
-.footer-socials {
-  /* Lægger cirklerne ved siden af hinanden */
+.home-hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 58px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.home-hero p {
+  font-size: 18px;
+  margin-bottom: 28px;
+}
+
+.hero-btn {
+  display: inline-block;
+
+  color: #ffffff;
+  text-decoration: none;
+  border: 1px solid #ffffff;
+
+  padding: 12px 24px;
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.hero-btn:hover {
+  opacity: 0.8;
+}
+
+/* Play-knap i hero */
+.hero-play {
+  position: absolute;
+  right: 28%;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 96px;
+  height: 96px;
+
+  background-color: rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  /* Afstand mellem cirklerne */
+.hero-play span {
+  color: #ffffff;
+  font-size: 38px;
+  margin-left: 6px;
+}
+
+/* Små kort under hero */
+.quick-links {
+  margin: 28px 0 50px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
-/* Sociale medier cirkler */
-.social-circle {
-  /* Bredde */
-  width: 56px;
+.quick-card {
+  background-color: #f8f4ef;
+  border-radius: 22px;
+  padding: 28px 20px;
+  text-align: center;
+}
 
-  /* Højde */
-  height: 56px;
+.quick-icon {
+  width: 64px;
+  height: 64px;
 
-  /* Baggrundsfarve */
-  background-color: #bf9a9a;
+  background-color: #e8b7be;
+  color: #ffffff;
 
-  /* Gør dem helt runde */
+  border-radius: 50%;
+  margin: 0 auto 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.quick-card:nth-child(1) .quick-icon {
+  background-color: #86b578;
+}
+
+.quick-card:nth-child(2) .quick-icon {
+  background-color: #e8b7be;
+}
+
+.quick-card:nth-child(3) .quick-icon {
+  background-color: #86b578;
+}
+
+.quick-card:nth-child(4) .quick-icon {
+  background-color: #fff4a3;
+  color: #3a2e2a;
+}
+
+.quick-card h3 {
+  font-size: 15px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.quick-card p {
+  font-size: 14px;
+}
+
+/* Teaser-section på forsiden */
+.home-about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+
+  margin-bottom: 60px;
+}
+
+.home-about h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  margin-bottom: 18px;
+}
+
+.home-about p {
+  font-size: 17px;
+  max-width: 520px;
+  margin-bottom: 24px;
+}
+
+.read-more-btn {
+  display: inline-block;
+
+  background-color: #1f3d2b;
+  color: #ffffff;
+  text-decoration: none;
+
+  padding: 12px 24px;
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.read-more-btn:hover {
+  opacity: 0.8;
+}
+
+.home-about-image {
+  min-height: 260px;
+  background-color: #f2f5e9;
+  border-radius: 26px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.food-bowl {
+  font-size: 76px;
+}
+
+/* Vidste du-section */
+.fact-strip {
+  background-color: #f2f5e9;
+  border-radius: 26px;
+
+  padding: 34px 40px;
+  margin-bottom: 60px;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 28px;
+  align-items: center;
+}
+
+.fact-icon {
+  width: 74px;
+  height: 74px;
+
+  background-color: #ffffff;
+  color: #86b578;
+
   border-radius: 50%;
 
-  /* Gør links til blokke */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 42px;
+}
+
+.fact-label {
+  font-size: 13px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.fact-strip h3 {
+  font-size: 22px;
+}
+
+.fact-strip a {
+  color: #3a2e2a;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* ================================================== */
+/* ---------- HVAD ER GUT HEALTH-SIDE ---------- */
+/* ================================================== */
+
+.hero-section {
+  min-height: 430px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 50px;
+
+  padding: 50px 0;
+}
+
+.hero-text h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 56px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: #3a2e2a;
+}
+
+.hero-text p {
+  max-width: 520px;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.hero-illustration {
+  position: relative;
+
+  height: 330px;
+  background-color: #fff4a3;
+  border-radius: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.gut-icon {
+  font-size: 110px;
+  z-index: 2;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circle-yellow {
+  width: 90px;
+  height: 90px;
+  background-color: #fff4a3;
+  border: 12px solid #f4cf45;
+
+  top: 40px;
+  right: 70px;
+}
+
+.circle-green {
+  width: 80px;
+  height: 80px;
+  background-color: #86b578;
+
+  left: 80px;
+  bottom: 60px;
+}
+
+.circle-pink {
+  width: 120px;
+  height: 120px;
+  background-color: #e8b7be;
+
+  right: 110px;
+  bottom: 50px;
+}
+
+/* Labels, fx VIDEO og INFOGRAFIK */
+.section-label {
+  display: inline-block;
+
+  background-color: #e8b7be;
+  color: #3a2e2a;
+
+  padding: 8px 14px;
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  margin-bottom: 18px;
+}
+
+/* Video-section */
+.video-section {
+  margin-top: 30px;
+}
+
+.video-card {
+  background-color: #f7e9ec;
+  border-radius: 24px;
+
+  padding: 30px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.video-image {
+  min-height: 230px;
+
+  background-color: #e8b7be;
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-button {
+  width: 78px;
+  height: 78px;
+
+  background-color: rgba(58, 46, 42, 0.7);
+  color: #ffffff;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 28px;
+}
+
+.video-text h2,
+.info-section h2,
+.cta-section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.video-text p {
+  font-size: 17px;
+}
+
+/* Infografik-section */
+.info-section {
+  margin-top: 60px;
+
+  background-color: #f8f4ef;
+  padding: 50px;
+
+  border-radius: 28px;
+}
+
+.info-section h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 260px 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.info-column {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.info-box h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #3a2e2a;
+}
+
+.info-box p {
+  font-size: 14px;
+}
+
+.gut-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gut-circle {
+  width: 230px;
+  height: 230px;
+
+  background-color: #ffffff;
+  border: 18px solid #e8b7be;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gut-circle span {
+  font-size: 90px;
+}
+
+/* Quiz-section nederst */
+.cta-section {
+  margin: 60px 0;
+
+  background-color: #f2f5e9;
+  border-radius: 26px;
+
+  padding: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.cta-section p {
+  font-size: 16px;
+}
+
+.cta-btn {
+  background-color: #1f3d2b;
+  color: #ffffff;
+  text-decoration: none;
+
+  padding: 12px 24px;
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.cta-btn:hover {
+  opacity: 0.8;
+}
+
+/* ================================================== */
+/* ---------- OPSKRIFTER-SIDE ---------- */
+/* ================================================== */
+
+/* Intro øverst på opskriftssiden */
+.recipes-intro {
+  padding: 70px 0 40px;
+}
+
+.recipes-intro h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 56px;
+  line-height: 1.1;
+  margin-bottom: 18px;
+  color: #3a2e2a;
+}
+
+.recipes-intro p {
+  max-width: 680px;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* Grid med opskriftskort */
+.recipes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px 42px;
+  margin-bottom: 80px;
+}
+
+/* Hvert opskriftskort */
+.recipe-card {
+  background-color: #f8f4ef;
+  border-radius: 28px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Billedområdet på hvert kort */
+.recipe-image {
+  min-height: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 90px;
+}
+
+/* Forskellige farver til kortene */
+.recipe-image-green {
+  background-color: #dcebd5;
+}
+
+.recipe-image-pink {
+  background-color: #f7e1e5;
+}
+
+.recipe-image-yellow {
+  background-color: #fff4a3;
+}
+
+/* Tekstboks ovenpå/under billedet */
+.recipe-card-text {
+  padding: 28px;
+  text-align: center;
+}
+
+.recipe-card-text h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  margin-bottom: 12px;
+  color: #3a2e2a;
+}
+
+.recipe-card-text p {
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+.recipe-card-text a {
+  color: #3a2e2a;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.recipe-card-text a:hover {
+  opacity: 0.6;
+}
+
+/* Tid på opskrift-undersiden */
+.single-recipe-text .recipe-time {
+  margin-top: 22px;
+  margin-bottom: 34px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #3a2e2a;
+
+  line-height: 1.4;
+}
+
+.source-section {
+  margin: 40px 0 70px;
+  padding: 22px 28px;
+  background-color: #f8f4ef;
+  border-radius: 20px;
+}
+
+.source-section p {
+  font-size: 14px;
+  color: #6b5b55;
+  font-style: italic;
+}
+
+.recipe-source {
+  margin-top: 24px;
+  font-size: 14px;
+  color: #6b5b55;
+  font-style: italic;
+}
+
+/* Billede på den enkelte opskriftsside */
+.single-recipe-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
   display: block;
 }
 
-/* Copyright tekst */
-.footer-copy {
-  /* Placeres nederst til højre */
-  position: absolute;
+/* Kildehenvisning på opskriftssiden */
+.recipes-source {
+  margin-bottom: 28px;
+}
 
-  right: 24px;
-  bottom: 14px;
+.recipes-source p {
+  font-size: 14px;
+  font-style: italic;
+  color: #6b5b55;
+}
 
-  /* Lille tekst */
+/* Billeder i opskriftskort */
+.recipe-image img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Gør billeder på opskrift-undersiden samme størrelse */
+.single-recipe-image {
+  width: 100%;
+  height: 360px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.single-recipe-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ---------- MOBILVERSION OPSKRIFTER ---------- */
+
+@media (max-width: 768px) {
+  .recipes-intro {
+    padding: 50px 0 30px;
+  }
+
+  .recipes-intro h1 {
+    font-size: 42px;
+  }
+
+  .recipes-intro p {
+    font-size: 16px;
+  }
+
+  .recipes-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .recipe-image {
+    min-height: 240px;
+    font-size: 70px;
+  }
+
+  .recipe-card-text h2 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 768px) {
+  .recipe-image img {
+    height: 240px;
+  }
+}
+
+/* ================================================== */
+/* ---------- BLOG-SIDE ---------- */
+/* ================================================== */
+
+/* Intro øverst på blog-siden */
+.blog-intro {
+  padding: 70px 0 40px;
+}
+
+.blog-intro h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 56px;
+  line-height: 1.1;
+  margin-bottom: 18px;
+  color: #3a2e2a;
+}
+
+.blog-intro p {
+  max-width: 680px;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* Grid med blogkort */
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px 42px;
+  margin-bottom: 80px;
+}
+
+/* Hvert blogkort */
+.blog-card {
+  background-color: #f8f4ef;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+/* Billedområde */
+.blog-image {
+  min-height: 330px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 90px;
+}
+
+/* Farver fra styleguiden */
+.blog-image-green {
+  background-color: #dcebd5;
+}
+
+.blog-image-pink {
+  background-color: #f7e1e5;
+}
+
+.blog-image-yellow {
+  background-color: #fff4a3;
+}
+
+/* Teksten i blogkortet */
+.blog-card-text {
+  padding: 28px;
+  text-align: center;
+}
+
+.blog-card-text h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  margin-bottom: 12px;
+  color: #3a2e2a;
+}
+
+.blog-card-text p {
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+.blog-card-text a {
+  color: #3a2e2a;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.blog-card-text a:hover {
+  opacity: 0.6;
+}
+
+/* ---------- MOBILVERSION BLOG ---------- */
+
+@media (max-width: 768px) {
+  .blog-intro {
+    padding: 50px 0 30px;
+  }
+
+  .blog-intro h1 {
+    font-size: 42px;
+  }
+
+  .blog-intro p {
+    font-size: 16px;
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .blog-image {
+    min-height: 240px;
+    font-size: 70px;
+  }
+
+  .blog-card-text h2 {
+    font-size: 26px;
+  }
+}
+
+/* ================================================== */
+/* ---------- OM OS-SIDE ---------- */
+/* ================================================== */
+
+/* Første store sektion på Om os-siden */
+.about-hero {
+  padding: 70px 0 60px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Tekstområdet */
+.about-hero-text h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 56px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: #3a2e2a;
+}
+
+.about-hero-text p {
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 22px;
+  max-width: 560px;
+}
+
+/* Billed-placeholder */
+.about-hero-image {
+  min-height: 380px;
+
+  background-color: #f7e1e5;
+  border-radius: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 90px;
+}
+
+/* Sektion med fire kort */
+.about-values {
+  background-color: #f8f4ef;
+  border-radius: 28px;
+
+  padding: 42px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+
+  margin-bottom: 60px;
+}
+
+.about-value-card {
+  text-align: center;
+}
+
+.about-circle {
+  width: 72px;
+  height: 72px;
+
+  background-color: #e8b7be;
+  border-radius: 50%;
+
+  margin: 0 auto 18px;
+}
+
+.about-value-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #3a2e2a;
+}
+
+.about-value-card p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Kontakt-sektion */
+.about-contact {
+  margin-bottom: 70px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.about-contact h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 34px;
+  margin-bottom: 18px;
+}
+
+.about-contact p {
+  max-width: 620px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.contact-info {
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+/* Små cirkler ved kontaktområdet */
+.contact-dots {
+  display: flex;
+  gap: 16px;
+}
+
+.contact-dots span {
+  width: 42px;
+  height: 42px;
+
+  background-color: #bf9a9a;
+  border-radius: 50%;
+}
+
+/* ---------- MOBILVERSION OM OS ---------- */
+
+@media (max-width: 768px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    padding: 50px 0 40px;
+  }
+
+  .about-hero-text h1 {
+    font-size: 42px;
+  }
+
+  .about-hero-image {
+    min-height: 260px;
+    font-size: 70px;
+  }
+
+  .about-values {
+    grid-template-columns: 1fr 1fr;
+    padding: 28px;
+  }
+
+  .about-contact {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-dots span {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-values {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================================================== */
+/* ---------- QUIZ-SIDE ---------- */
+/* ================================================== */
+
+/* Hele quizområdet */
+.quiz-section {
+  min-height: 620px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 70px 0;
+}
+
+/* Stor overskrift */
+.quiz-section h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 52px;
+  margin-bottom: 36px;
+  color: #3a2e2a;
+  text-align: center;
+}
+
+/* Selve quizboksen */
+.quiz-card {
+  width: 100%;
+  max-width: 720px;
+  min-height: 330px;
+
+  background-color: #f7e1e5;
+  border-radius: 28px;
+
+  padding: 55px 70px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+/* Skjuler de quiz-skærme, der ikke bruges */
+.hidden {
+  display: none;
+}
+
+/* Overskrift i quizkort */
+.quiz-card h2 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 18px;
+  color: #3a2e2a;
+}
+
+/* Tekst i quizkort */
+.quiz-card p {
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+/* Start/prøv igen-knap */
+.quiz-btn-main {
+  margin-top: 30px;
+
+  background-color: #bf9a9a;
+  color: #3a2e2a;
+
+  border: none;
+  border-radius: 999px;
+
+  padding: 14px 38px;
+
+  font-family: "Switzer", sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.quiz-btn-main:hover {
+  opacity: 0.75;
+}
+
+/* Spørgsmålstæller */
+.quiz-progress {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+/* Lille linje ved spørgsmålstælleren */
+.quiz-progress::before,
+.quiz-progress::after {
+  content: "";
+  display: inline-block;
+  width: 70px;
+  height: 2px;
+  background-color: #3a2e2a;
+  margin: 0 16px 4px;
+}
+
+/* Knapperne Myte/Fakta */
+.quiz-answer-buttons {
+  margin-top: 34px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  width: 260px;
+}
+
+.quiz-answer-buttons button {
+  background-color: #bf9a9a;
+  color: #3a2e2a;
+
+  border: none;
+  border-radius: 4px;
+
+  padding: 13px;
+
+  font-family: "Switzer", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.quiz-answer-buttons button:hover {
+  opacity: 0.75;
+}
+
+/* Feedback efter svar */
+.quiz-feedback {
+  margin-top: 22px;
+  font-weight: 800;
+}
+
+/* ---------- MOBILVERSION QUIZ ---------- */
+
+@media (max-width: 768px) {
+  .quiz-section {
+    padding: 50px 0;
+    min-height: 560px;
+  }
+
+  .quiz-section h1 {
+    font-size: 38px;
+  }
+
+  .quiz-card {
+    padding: 38px 24px;
+    min-height: 320px;
+  }
+
+  .quiz-card h2 {
+    font-size: 24px;
+  }
+
+  .quiz-card p {
+    font-size: 15px;
+  }
+
+  .quiz-progress::before,
+  .quiz-progress::after {
+    width: 35px;
+    margin: 0 10px 4px;
+  }
+
+  .quiz-answer-buttons {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+/* Underline på den side man er inde på */
+.nav-menu a.active {
+  border-bottom: 2px solid #3a2e2a;
+  padding-bottom: 6px;
+  font-weight: 700;
+}
+
+/* ================================================== */
+/* ---------- OPSKRIFTER MED FILTER ---------- */
+/* ================================================== */
+
+.recipes-filter {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 42px;
+}
+
+.filter-btn {
+  background-color: #f8f4ef;
+  color: #3a2e2a;
+  border: 1px solid #e3c5c5;
+  border-radius: 999px;
+  padding: 12px 24px;
+  font-family: "Switzer", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.filter-btn:hover,
+.active-filter {
+  background-color: #1f3d2b;
+  color: #ffffff;
+  border-color: #1f3d2b;
+}
+
+.recipe-category {
+  display: inline-block;
+  color: #3a2e2a;
+  background-color: #e8b7be;
+  border-radius: 999px;
+  padding: 6px 14px;
   font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
 
-  /* Tekstfarve */
-  color: #1b0508;
+.recipe-card.hidden {
+  display: none;
+}
+
+/* ================================================== */
+/* ---------- ENKELT OPSKRIFT-SIDE ---------- */
+/* ================================================== */
+
+.single-recipe-hero {
+  padding: 70px 0 50px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.single-recipe-text h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 54px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.single-recipe-text p {
+  max-width: 580px;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 26px;
+  color: #3a2e2a;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.back-link:hover {
+  opacity: 0.6;
+}
+
+.single-recipe-image {
+  min-height: 360px;
+  background-color: #f7e1e5;
+  border-radius: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.single-recipe-image span {
+  font-size: 100px;
+}
+
+.single-recipe-content {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 40px;
+
+  margin-bottom: 80px;
+}
+
+.ingredients-box,
+.steps-box {
+  background-color: #f8f4ef;
+  border-radius: 28px;
+  padding: 36px;
+}
+
+.ingredients-box h2,
+.steps-box h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  margin-bottom: 22px;
+}
+
+.ingredients-box ul,
+.steps-box ol {
+  padding-left: 22px;
+}
+
+.ingredients-box li,
+.steps-box li {
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.nutrition {
+  margin-top: 26px;
+  padding: 18px;
+  background-color: #f2f5e9;
+  border-radius: 18px;
+  font-weight: 600;
+}
+
+/* ---------- MOBIL OPSKRIFTER ---------- */
+
+@media (max-width: 768px) {
+  .recipes-filter {
+    gap: 10px;
+  }
+
+  .filter-btn {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+
+  .single-recipe-hero {
+    grid-template-columns: 1fr;
+    padding: 50px 0 35px;
+  }
+
+  .single-recipe-text h1 {
+    font-size: 40px;
+  }
+
+  .single-recipe-image {
+    min-height: 250px;
+  }
+
+  .single-recipe-image span {
+    font-size: 72px;
+  }
+
+  .single-recipe-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .ingredients-box,
+  .steps-box {
+    padding: 28px;
+  }
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+  width: 100%;
+  background-color: #e3c5c5;
+
+  padding: 40px 8%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+}
+
+footer h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #3a2e2a;
+}
+
+footer p {
+  font-size: 18px;
+  color: #3a2e2a;
+}
+
+.footer-dots {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-dots span {
+  width: 42px;
+  height: 42px;
+
+  background-color: #bf9a9a;
+  border-radius: 50%;
+}
+
+/* ---------- MOBILVERSION ---------- */
+
+@media (max-width: 768px) {
+  .site-header {
+    height: auto;
+    padding: 24px 8%;
+
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  main {
+    width: 90%;
+  }
+
+  .home-hero {
+    padding: 36px;
+    min-height: 460px;
+  }
+
+  .home-hero h1 {
+    font-size: 40px;
+  }
+
+  .hero-play {
+    right: 36px;
+    bottom: 36px;
+    top: auto;
+    transform: none;
+
+    width: 74px;
+    height: 74px;
+  }
+
+  .quick-links {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .home-about {
+    grid-template-columns: 1fr;
+  }
+
+  .fact-strip {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .fact-icon {
+    margin: 0 auto;
+  }
+
+  .hero-section {
+    grid-template-columns: 1fr;
+    padding: 40px 0;
+  }
+
+  .hero-text h1 {
+    font-size: 40px;
+  }
+
+  .hero-illustration {
+    height: 260px;
+  }
+
+  .video-card {
+    grid-template-columns: 1fr;
+  }
+
+  .info-section {
+    padding: 28px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+/* ---------- BURGER MENU ---------- */
+
+/* Burgerknappen er skjult på desktop */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* De tre streger i burgeren */
+.burger span {
+  width: 30px;
+  height: 3px;
+
+  background-color: #3a2e2a;
+  border-radius: 999px;
+}
+
+/* ---------- MOBIL BURGER MENU ---------- */
+
+@media (max-width: 768px) {
+  .site-header {
+    position: relative;
+
+    height: auto;
+    min-height: 80px;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 22px 8%;
+  }
+
+  /* Viser burgerknappen på mobil */
+  .burger {
+    display: flex;
+  }
+
+  /* Skjuler menuen som standard på mobil */
+  .nav-menu {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+
+    background-color: #ffffff;
+
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+
+    padding: 28px 0;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+
+    z-index: 10;
+  }
+
+  /* Når menuen er åben */
+  .nav-menu.open {
+    display: flex;
+  }
+
+  /* Skjuler den grønne knap på mobil */
+  .header-btn {
+    display: none;
+  }
+
+  .nav-menu a {
+    font-size: 18px;
+  }
+
+  .nav-menu a.active {
+    border-bottom: 2px solid #3a2e2a;
+    padding-bottom: 5px;
+  }
 }

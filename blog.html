@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Switzer til brødtekst -->
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Playfair Display til overskrifter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>GutGuide</title>
+  </head>
+
+  <body>
+    <!-- Header / navigation -->
+    <header class="site-header">
+      <a href="index.html" class="logo">GutGuide</a>
+
+      <!-- Burgerknap til mobil -->
+      <button class="burger" id="burger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="hvad-er.html">Hvad er gut health?</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="opskrifter.html">Opskrifter</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="om-os.html">Om os</a>
+      </nav>
+
+      <a href="quiz.html" class="header-btn">Tag quizzen</a>
+    </header>
+    <main>
+      <!-- Intro til blog-siden -->
+      <section class="blog-intro">
+        <h1>Blog</h1>
+        <p>
+          Læs korte artikler om tarmens sundhed, gode vaner, kost, fordøjelse og
+          hvordan gut health kan påvirke din hverdag.
+        </p>
+      </section>
+
+      <!-- Blogindlæg i grid -->
+      <section class="blog-grid">
+        <!-- Blogpost 1 -->
+        <article class="blog-card">
+          <div class="blog-image blog-image-green">
+            <span>🌿</span>
+          </div>
+
+          <div class="blog-card-text">
+            <h2>Hvad betyder en sund tarm?</h2>
+            <p>
+              Få en enkel introduktion til, hvorfor tarmen spiller en vigtig
+              rolle for kroppen.
+            </p>
+            <a href="#">Læs mere</a>
+          </div>
+        </article>
+
+        <!-- Blogpost 2 -->
+        <article class="blog-card">
+          <div class="blog-image blog-image-pink">
+            <span>🧠</span>
+          </div>
+
+          <div class="blog-card-text">
+            <h2>Tarmen og dit humør</h2>
+            <p>
+              Lær om forbindelsen mellem tarmen, hjernen og dit mentale velvære.
+            </p>
+            <a href="#">Læs mere</a>
+          </div>
+        </article>
+
+        <!-- Blogpost 3 -->
+        <article class="blog-card">
+          <div class="blog-image blog-image-yellow">
+            <span>🥗</span>
+          </div>
+
+          <div class="blog-card-text">
+            <h2>Mad der støtter din tarm</h2>
+            <p>
+              Se hvilke typer mad der kan hjælpe med at skabe balance i
+              fordøjelsen.
+            </p>
+            <a href="#">Læs mere</a>
+          </div>
+        </article>
+
+        <!-- Blogpost 4 -->
+        <article class="blog-card">
+          <div class="blog-image blog-image-green">
+            <span>✨</span>
+          </div>
+
+          <div class="blog-card-text">
+            <h2>Små vaner med stor effekt</h2>
+            <p>
+              Enkle hverdagsvaner kan gøre en forskel for din mave og dit
+              energiniveau.
+            </p>
+            <a href="#">Læs mere</a>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <h2>GutGuide</h2>
+      <p>kontakt.guthealth@gmail.com</p>
+
+      <div class="footer-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </footer>
+    <script>
+      const burgerBtn = document.getElementById("burger-btn");
+      const navMenu = document.getElementById("nav-menu");
+
+      burgerBtn.addEventListener("click", function () {
+        navMenu.classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>

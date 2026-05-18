@@ -1,9 +1,194 @@
 <!doctype html>
-<html lang="en">
+<html lang="da">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hvad er GutHealth?</title>
+
+    <!-- Switzer til brødtekst -->
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Playfair Display til overskrifter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>GutGuide</title>
   </head>
-  <body></body>
+  <body>
+    <!-- Header / navigation -->
+    <header class="site-header">
+      <a href="index.html" class="logo">GutGuide</a>
+
+      <!-- Burgerknap til mobil -->
+      <button class="burger" id="burger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="hvad-er.html" class="active">Hvad er gut health?</a>
+        <a href="blog.html">Blog</a>
+        <a href="opskrifter.html">Opskrifter</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="om-os.html">Om os</a>
+      </nav>
+
+      <a href="quiz.html" class="header-btn">Tag quizzen</a>
+    </header>
+
+    <main>
+      <!-- Hero-section er det første store område på siden -->
+      <section class="hero-section">
+        <!-- Tekstområdet i venstre side -->
+        <div class="hero-text">
+          <h1>Hvad er gut health?</h1>
+          <p>
+            Gut health handler om balancen i tarmen. En sund tarm kan give dig
+            mere energi, bedre fordøjelse, stærkere immunforsvar og et bedre
+            humør.
+          </p>
+        </div>
+
+        <!-- Illustration i højre side -->
+        <div class="hero-illustration">
+          <div class="gut-icon">〰️</div>
+
+          <!-- Dekorative cirkler inspireret af styleguidens farver -->
+          <div class="circle circle-yellow"></div>
+          <div class="circle circle-green"></div>
+          <div class="circle circle-pink"></div>
+        </div>
+      </section>
+
+      <!-- Sektion med video -->
+      <section class="video-section">
+        <p class="section-label">VIDEO 2 - EDUCATIONAL VIDEO</p>
+
+        <div class="video-card">
+          <!-- Placeholder til video eller billede -->
+          <div class="video-image">
+            <div class="play-button">▶</div>
+          </div>
+
+          <!-- Tekst ved siden af videoen -->
+          <div class="video-text">
+            <h2>Hvad påvirker din tarm?</h2>
+            <p>
+              Se videoen og forstå de vigtigste faktorer for din tarm på 1
+              minut.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Infografik-sektion -->
+      <section class="info-section">
+        <p class="section-label">INFOGRAFIK</p>
+
+        <h2>Sådan påvirker din tarm hele kroppen</h2>
+
+        <!-- Grid laver tre kolonner: venstre tekst, midter-ikon, højre tekst -->
+        <div class="info-grid">
+          <!-- Venstre side af infografikken -->
+          <div class="info-column">
+            <div class="info-box">
+              <h3>Hjerne & humør</h3>
+              <p>
+                Tarmen kommunikerer med hjernen og kan påvirke dit humør og din
+                mentale balance.
+              </p>
+            </div>
+
+            <div class="info-box">
+              <h3>Immunforsvar</h3>
+              <p>
+                En stor del af immunforsvaret hænger sammen med bakterierne i
+                tarmen.
+              </p>
+            </div>
+
+            <div class="info-box">
+              <h3>Næringsoptagelse</h3>
+              <p>
+                En sund tarm hjælper kroppen med at optage vitaminer og
+                mineraler.
+              </p>
+            </div>
+          </div>
+
+          <!-- Midten af infografikken -->
+          <div class="gut-center">
+            <div class="gut-circle">
+              <span>〰️</span>
+            </div>
+          </div>
+
+          <!-- Højre side af infografikken -->
+          <div class="info-column">
+            <div class="info-box">
+              <h3>Energi</h3>
+              <p>En balanceret tarm kan give mere stabil energi i hverdagen.</p>
+            </div>
+
+            <div class="info-box">
+              <h3>Hud</h3>
+              <p>
+                Tarmens tilstand kan afspejles i huden og kroppens generelle
+                velvære.
+              </p>
+            </div>
+
+            <div class="info-box">
+              <h3>Vægtbalance</h3>
+              <p>
+                Tarmbakterier spiller en rolle i fordøjelse, appetit og kroppens
+                balance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to action: område der skal få brugeren til at tage quizzen -->
+      <section class="cta-section">
+        <div>
+          <h2>En lille ubalance kan påvirke mere, end du tror.</h2>
+          <p>
+            Tag vores quiz og find ud af, hvordan du kan støtte din tarm bedre.
+          </p>
+        </div>
+
+        <a href="#" class="cta-btn">Tag quizzen</a>
+      </section>
+    </main>
+
+    <!-- Footer er bunden af siden -->
+    <footer>
+      <h2>GutGuide</h2>
+      <p>kontakt.guthealth@gmail.com</p>
+
+      <div class="footer-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </footer>
+    <script>
+      const burgerBtn = document.getElementById("burger-btn");
+      const navMenu = document.getElementById("nav-menu");
+
+      burgerBtn.addEventListener("click", function () {
+        navMenu.classList.toggle("open");
+      });
+    </script>
+  </body>
 </html>

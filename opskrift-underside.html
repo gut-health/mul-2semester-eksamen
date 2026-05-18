@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Switzer til brødtekst -->
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Playfair Display til overskrifter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Opskrift</title>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a href="index.html" class="logo">GutGuide</a>
+
+      <button class="burger" id="burger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="hvad-er.html">Hvad er gut health?</a>
+        <a href="blog.html">Blog</a>
+        <a href="opskrifter.html" class="active">Opskrifter</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="om-os.html">Om os</a>
+      </nav>
+
+      <a href="quiz.html" class="header-btn">Tag quizzen</a>
+    </header>
+
+    <main id="recipe-page">
+      <!-- Opskriften bliver sat ind her med JavaScript -->
+    </main>
+
+    <footer>
+      <h2>GutGuide</h2>
+      <p>kontakt.guthealth@gmail.com</p>
+
+      <div class="footer-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </footer>
+
+    <script>
+      const recipes = {
+        "mango-chia-budding": {
+          title: "Mango chia budding",
+          category: "Morgenmad",
+          image: "images/mango-chia-budding.jpg",
+          intro: "En frisk og cremet morgenmad med mango, chiafrø og yoghurt.",
+          time: "Tid: 2 timer",
+          nutrition:
+            "Hver portion indeholder ca. 300 kcal, 10 g protein, 40 g kulhydrat, 9 g fedt, 9 g fibre og 0,15 g salt.",
+          source: "Opskrift inspireret af BBC Food’s Gut-health recipes.",
+          ingredients: [
+            "150 g moden mango, plus ekstra skiver til servering",
+            "100 g naturel yoghurt",
+            "200 ml mælk eller vand",
+            "2–3 spsk agavesirup",
+            "¼ tsk stødt kardemomme, valgfrit",
+            "4 spsk chiafrø",
+            "Et par mynteblade til pynt, valgfrit",
+          ],
+          steps: [
+            "Kom mango, yoghurt, mælk, agavesirup og kardemomme i en blender.",
+            "Blend til en helt glat masse.",
+            "Hæld blandingen i en skål og rør chiafrøene i.",
+            "Dæk til og stil på køl natten over eller i mindst 8 timer.",
+            "Servér i glas eller skåle med mangoskiver og eventuelt mynte.",
+          ],
+        },
+        "banan-baer-smoothie": {
+          title: "Banan bær smoothie",
+          category: "Morgenmad",
+          image: "images/banan-baer-smoothie.jpg",
+          intro:
+            "En tyk og mættende smoothie med bær, banan, havregryn og frø.",
+          time: "Tid: 10 minutter",
+          nutrition:
+            "Hver portion indeholder ca. 339 kcal, 9 g protein, 32 g kulhydrat, 18 g fedt, 7 g fibre og 0,1 g salt.",
+          source: "Opskrift inspireret af BBC Food’s Gut-health recipes.",
+          ingredients: [
+            "½ kop frosne blandede bær",
+            "1 mellemstor moden banan",
+            "2 spsk grove havregryn",
+            "2 toppede tsk cashewsmør uden tilsat sukker",
+            "2 tsk blandede frø",
+            "1 kop plantedrik, fx soja- eller mandelmælk",
+          ],
+          steps: [
+            "Kom alle ingredienserne i en blender.",
+            "Blend til en tyk og glat konsistens.",
+            "Hæld i et højt glas og servér.",
+          ],
+        },
+
+        "bagte-soede-kartofler": {
+          title: "Bagte søde kartofler med chipotle-sorte bønner",
+          category: "Frokost",
+          image: "images/bagte-soede-kartofler.jpg",
+          intro: "Bagte søde kartofler med bønner, limeyoghurt og frisk salsa.",
+          time: "Tid: 1 time og 30 minutter",
+          source: "Opskrift inspireret af BBC Food’s Gut-health recipes.",
+          ingredients: [
+            "2 store søde kartofler eller 4 små",
+            "1 tsk vegetabilsk olie",
+            "1 dåse sorte bønner, drænet og skyllet",
+            "2 spsk olivenolie",
+            "2 fed hvidløg, finthakket",
+            "100 g grillede peberfrugter fra glas",
+            "½ tsk røget paprika",
+            "1 toppet tsk chipotle chilipasta",
+            "150 ml kogende vand",
+            "200 g græsk yoghurt",
+            "½ lime, saft og fintrevet skal",
+            "150 g cherrytomater",
+            "2 forårsløg",
+            "1 toppet tsk syltede jalapeñoskiver",
+            "2 tsk olivenolie",
+            "Frisk koriander og salt efter smag",
+          ],
+          steps: [
+            "Forvarm ovnen til 180°C.",
+            "Prik huller i de søde kartofler, gnid dem med olie og drys med salt.",
+            "Bag kartoflerne i 40 minutter til 1 time, indtil de er møre.",
+            "Varm olivenolie i en gryde og steg hvidløg let gyldent.",
+            "Tilsæt sorte bønner og mos cirka halvdelen med en ske.",
+            "Tilsæt peberfrugt, paprika, chipotlepasta og kogende vand.",
+            "Lad blandingen simre i ca. 10 minutter, til den bliver tyk.",
+            "Rør yoghurt sammen med limesaft og limeskal.",
+            "Bland tomater, forårsløg, jalapeños, lime og olivenolie til salsa.",
+            "Skær kartoflerne op og top med limeyoghurt, bønner og salsa.",
+          ],
+          nutrition:
+            "Hver portion indeholder ca. 913 kcal, 23 g protein, 120 g kulhydrat, 32 g fedt og 24 g fibre.",
+        },
+
+        "blomkaal-kikaertesalat": {
+          title: "Varm krydret blomkåls- og kikærtesalat",
+          category: "Aftensmad",
+          image: "images/blomkaal-kikaertesalat.jpg",
+          intro:
+            "En varm salat med blomkål, kikærter, harissa og granatæblekerner.",
+          time: "Tid 1 time",
+          nutrition:
+            "Hver portion indeholder ca. 483 kcal, 17 g protein, 39 g kulhydrat, 26 g fedt, 15 g fibre og 2,7 g salt.",
+          source: "Opskrift inspireret af BBC Food’s Gut-health recipes.",
+          ingredients: [
+            "3 spsk olivenolie",
+            "½ tsk stødt kanel",
+            "2 tsk spidskommenfrø",
+            "1 lille blomkålshoved",
+            "250 g kogte kikærter eller 1 dåse kikærter",
+            "1–2 spsk harissa",
+            "4 små modne tomater",
+            "1 tsk havsaltflager",
+            "3–4 spsk granatæblekerner",
+            "1 stort bundt bredbladet persille",
+          ],
+          steps: [
+            "Forvarm ovnen til 220°C.",
+            "Bland olivenolie, kanel og spidskommenfrø i en stor skål.",
+            "Vend blomkålen i krydderiblandingen.",
+            "Kom blomkålen i et ovnfast fad og bag i 15 minutter.",
+            "Vend kikærter, harissa og tomater i den samme skål.",
+            "Fordel kikærter og tomater over blomkålen.",
+            "Bag i yderligere 15 minutter, indtil blomkålen er mør.",
+            "Drys med salt og vend halvdelen af granatæblekernerne i.",
+            "Servér med persille og resten af granatæblekernerne.",
+          ],
+        },
+
+        "tempeh-frikadeller": {
+          title: "Tempeh-frikadeller i tomatsauce",
+          category: "Aftensmad",
+          image: "images/tempeh-frikadeller.jpg",
+          intro:
+            "Plantebaserede frikadeller i en rustik tomatsauce med balsamico.",
+          time: "Tid: 1 time",
+          source: "Opskrift inspireret af BBC Food’s Gut-health recipes.",
+          nutrition:
+            "Hver portion indeholder ca. 452 kcal, 27,5 g protein, 40,1 g kulhydrat, 21,9 g fedt, 9,4 g fibre og 0,08 g salt.",
+          ingredients: [
+            "2 spsk olivenolie",
+            "100 g løg, hakket",
+            "200 g champignon, grofthakket",
+            "300 g tempeh, revet",
+            "3 spsk tamari",
+            "2 spsk tomatpuré",
+            "4 fed hvidløg, revet",
+            "50 g grovvalsede havregryn",
+            "400 g tomater, grofthakkede",
+            "3 spsk balsamicoeddike",
+            "25 g frisk bredbladet persille",
+            "Salt og friskkværnet sort peber",
+          ],
+          steps: [
+            "Varm 1 spsk olivenolie på en pande.",
+            "Steg løg med salt og peber i cirka 10 minutter.",
+            "Tilsæt champignon og steg i 3–4 minutter.",
+            "Tilsæt tempeh, tamari, tomatpuré, hvidløg og havregryn.",
+            "Steg videre i 5–6 minutter.",
+            "Blend blandingen kort i en foodprocessor.",
+            "Form små frikadeller og steg dem gyldne.",
+            "Lav saucen ved at simre tomater med salt og peber.",
+            "Tilsæt balsamicoeddike og tomatpuré.",
+            "Kom frikadellerne i saucen og pynt med persille.",
+          ],
+        },
+
+        "cremet-svampepasta": {
+          title: "Cremet svampepasta",
+          category: "Aftensmad",
+          icon: "🍝",
+          image: "images/cremet-svampepasta.jpg",
+          intro:
+            "En cremet plantebaseret pasta med svampe, spinat, porre og tofu.",
+          time: "Tid: 30 minutter",
+          nutrition:
+            "Hver portion indeholder ca. 743 kcal, 28 g protein, 53 g kulhydrat, 14 g fedt, 12 g fibre og 1,2 g salt.",
+          source: "Opskrift inspireret af BBC Food’s Gut-health recipes.",
+          ingredients: [
+            "150 g fuldkorns-tagliatelle eller spaghetti",
+            "Olivenolie til stegning",
+            "1 stor porre, skåret i tynde skiver",
+            "200 g babyspinat",
+            "200 g svampe, skåret i tykke skiver",
+            "2 fed hvidløg, knuste",
+            "150 g silkeblød tofu",
+            "1 spsk lys soja",
+            "Salt og friskkværnet sort peber",
+          ],
+          steps: [
+            "Kog pastaen i saltet vand i ca. 10 minutter.",
+            "Gem lidt af pastavandet, før du hælder vandet fra.",
+            "Steg porrerne forsigtigt i olivenolie i 5 minutter.",
+            "Steg spinaten, indtil den falder sammen, og pres væsken ud.",
+            "Steg svampene ved høj varme, indtil de er karamelliserede.",
+            "Tilsæt hvidløg, porrer og spinat.",
+            "Blend silketofu, soja og 3 spsk pastavand til en glat sauce.",
+            "Hæld saucen på panden og vend pastaen i.",
+            "Smag til med salt og peber og servér straks.",
+          ],
+        },
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const recipeId = params.get("id");
+      const recipe = recipes[recipeId];
+
+      const recipePage = document.getElementById("recipe-page");
+
+      if (!recipe) {
+        recipePage.innerHTML = `
+        <section class="single-recipe">
+          <h1>Opskriften blev ikke fundet</h1>
+          <p>Gå tilbage til opskriftssiden og vælg en opskrift.</p>
+          <a href="opskrifter.html" class="back-link">Tilbage til opskrifter</a>
+        </section>
+      `;
+      } else {
+        document.title = recipe.title;
+
+        recipePage.innerHTML = `
+        <section class="single-recipe-hero">
+          <div class="single-recipe-text">
+            <p class="recipe-category">${recipe.category}</p>
+            <h1>${recipe.title}</h1>
+            <p>${recipe.intro}</p>
+            <p class="recipe-time">${recipe.time}</p>
+            <a href="opskrifter.html" class="back-link">← Tilbage til opskrifter</a>
+          </div>
+
+        <div class="single-recipe-image">
+  ${
+    recipe.image
+      ? `<img src="${recipe.image}" alt="${recipe.title}">`
+      : `<span>${recipe.icon}</span>`
+  }
+</div>
+        </section>
+
+        <section class="single-recipe-content">
+          <div class="ingredients-box">
+            <h2>Ingredienser</h2>
+            <ul>
+              ${recipe.ingredients.map((item) => `<li>${item}</li>`).join("")}
+            </ul>
+          </div>
+
+          <div class="steps-box">
+            <h2>Fremgangsmåde</h2>
+            <ol>
+              ${recipe.steps.map((step) => `<li>${step}</li>`).join("")}
+            </ol>
+
+            ${recipe.nutrition ? `<p class="nutrition">${recipe.nutrition}</p>` : ""}
+            ${recipe.source ? `<p class="recipe-source">${recipe.source}</p>` : ""}
+          </div>
+        </section>
+      `;
+      }
+
+      const burgerBtn = document.getElementById("burger-btn");
+      const navMenu = document.getElementById("nav-menu");
+
+      burgerBtn.addEventListener("click", function () {
+        navMenu.classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>
